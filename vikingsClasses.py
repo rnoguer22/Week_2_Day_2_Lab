@@ -14,6 +14,7 @@ class Soldier:
             self.health = 0
         else:
             pass
+        return damage
 
 
 # Viking
@@ -61,24 +62,24 @@ class War:
         return None
     
     def vikingAttack(self):
-        saxon = Saxon(choice(self.saxonArmy))
-        viking = Viking(choice(self.vikingArmy))
-        saxon.receiveDamage(viking.strength)
+        saxon = choice(self.saxonArmy)
+        viking = choice(self.vikingArmy)
+        ataque = saxon.receiveDamage(viking.strength)
         if saxon.health <= 0:
             self.saxonArmy.remove(saxon)
         else:
             pass
-        return saxon.receiveDamage(viking.strength)
+        return ataque
 
     def saxonAttack(self):
-        viking = Viking(choice(self.vikingArmy))
-        saxon = Saxon(choice(self.saxonArmy))
-        viking.receiveDamage(saxon.strength)
+        viking = choice(self.vikingArmy)
+        saxon = choice(self.saxonArmy)
+        ataque = viking.receiveDamage(saxon.strength)
         if viking.health <= 0:
             self.vikingArmy.remove(viking)
         else:
             pass
-        return viking.receiveDamage(saxon.strength)
+        return ataque
     
     def showStatus(self):
         if self.saxonArmy == []:
