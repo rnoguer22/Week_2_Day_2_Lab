@@ -24,10 +24,10 @@ class Viking(Soldier):
     
     def receiveDamage(self, damage):
         self.health -= damage
-        if self.health < 0:
+        if self.health <= 0:
             return "{} has died in act of combat".format(self.name)
         else:
-            return "{} has received {} points of damage".format(self.name, self.damage)
+            return "{} has received {} points of damage".format(self.name, damage)
     
     def battleCry(self):
         return "Odin Owns You All!"
@@ -40,10 +40,10 @@ class Saxon(Soldier):
     
     def receiveDamage(self, damage):
         self.health -= damage
-        if self.health < 0:
+        if self.health <= 0:
             return "A Saxon has died in combat"
         else:
-            return "A Saxon has received {} points of damage".format(self.damage)
+            return "A Saxon has received {} points of damage".format(damage)
 
 from random import choice
 # War
