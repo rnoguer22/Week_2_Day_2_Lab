@@ -14,7 +14,6 @@ class Soldier:
             self.health = 0
         else:
             pass
-        return damage
 
 
 # Viking
